@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 545278384}
   - component: {fileID: 545278387}
   m_Layer: 0
-  m_Name: p1
+  m_Name: p2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 559909689}
   - component: {fileID: 559909692}
   m_Layer: 0
-  m_Name: ImageTarget
+  m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -611,7 +611,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1627554793819324278, guid: 4c3bcb0aeafb5486183158cf6abd26ca, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: Cube2
       objectReference: {fileID: 0}
     - target: {fileID: 4417261303822985041, guid: 4c3bcb0aeafb5486183158cf6abd26ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -693,7 +693,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1627554793819324278, guid: b7535da4e452be848861bba57f0e5ea0, type: 3}
       propertyPath: m_Name
-      value: Cube
+      value: Cube1
       objectReference: {fileID: 0}
     - target: {fileID: 4417261303822985041, guid: b7535da4e452be848861bba57f0e5ea0, type: 3}
       propertyPath: m_LocalScale.x
