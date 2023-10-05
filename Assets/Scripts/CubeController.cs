@@ -12,7 +12,7 @@ public class CubeController : MonoBehaviour
         cubes = GameObject.FindGameObjectsWithTag("Cube");
 
         // Hide all cubes in the beginning
-        SetAllCubesVisibility(true);
+        SetAllCubesVisibility(false);
     }
 
     void Update()

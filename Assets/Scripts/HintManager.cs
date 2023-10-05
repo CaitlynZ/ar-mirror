@@ -14,20 +14,20 @@ public class HintManager : MonoBehaviour
     void Start()
     {
         hintIdx = Enumerable.Range(0, hintMaterials.Length).ToList();
-
-        Debug.Log(hintIdx.Count);
         cubes = GameObject.FindGameObjectsWithTag("Cube");
         cubeIdx = Enumerable.Range(0, cubes.Length).ToList();
 
+        // hide all cubes when starting
         foreach (GameObject cube in cubes)
         {
-            cube.SetActive(true);
+            cube.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // number key control how many hints to display while triggering shuffle on hints and positions
         if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2)
         || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
         {

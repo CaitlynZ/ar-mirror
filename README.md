@@ -18,5 +18,6 @@ The updated version committed with `Packages/com.ptc.vuforia.engine-10.17.4.tgz`
 
 ### randomize hints, only control how many hints shown
 
-- key press on "1", "2", "3" and "4" to toggle the show/hide for each hint cube
-- key press on "Return" to randomly generate next round of hints on all cubes
+- key press on "0", "1", "2", "3" and "4" to control how many hints are shown while triggering shuffle
+  - the position where hints are shown is randomized
+  - current randomize logic: shuffle the list and take as many as needed (from beginning of the list) to display
