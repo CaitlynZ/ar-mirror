@@ -11,8 +11,8 @@ public class CubeController : MonoBehaviour
         // Store all the cubes in the scene
         cubes = GameObject.FindGameObjectsWithTag("Cube");
 
-        // Hide all cubes in the begining
-        SetAllCubesVisibility(false);      
+        // Hide all cubes in the beginning
+        SetAllCubesVisibility(true);
     }
 
     void Update()
@@ -24,7 +24,7 @@ public class CubeController : MonoBehaviour
             {
                 ToggleCubeVisibility(i);
             }
-        }       
+        }
     }
 
     // Set visibility of all cubes
