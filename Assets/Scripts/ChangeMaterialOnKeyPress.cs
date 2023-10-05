@@ -4,33 +4,23 @@ using UnityEngine;
 
 public class ChangeMaterialOnKeyPress : MonoBehaviour
 {
-    public Material hint1Material;
-    public Material hint3Material;
+    public Material[] hintMaterial;
 
     private MeshRenderer cubeRenderer;
-    private bool isHint1Material = true;
 
     void Start()
     {
         cubeRenderer = GetComponent<MeshRenderer>();
-        // Initially set the cube's material to hint1Material
-        cubeRenderer.material = hint1Material;
+        // Initially set the cube's material
+        cubeRenderer.material = hintMaterial[0];
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return)) // Check for the Enter key press
         {
-            // Toggle between hint1Material and hint3Material
-            if (isHint1Material)
-            {
-                cubeRenderer.material = hint3Material;
-            }
-            else
-            {
-                cubeRenderer.material = hint1Material;
-            }
-            isHint1Material = !isHint1Material;
+            int randomMaterialIndex = Random.Range(0, hintMaterial.Length);
+            cubeRenderer.material = hintMaterial[randomMaterialIndex];
         }
     }
 }
