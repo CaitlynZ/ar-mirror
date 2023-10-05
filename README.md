@@ -1,14 +1,22 @@
 # AR-Mirror Unity Project
 
 ## Package
-We use Vuforia Engine for AR in this project. 
+
+We use Vuforia Engine for AR in this project.
 Might need to manually install [Vuforia SDK](https://developer.vuforia.com/downloads/sdk)
+
 - Select and download the "Add Vuforia Engine to a Unity Project or upgrade to the latest version".
-- Click on the downloaded file to import into the opened Unity project (like the screenshot below). 
-  
+- Click on the downloaded file to import into the opened Unity project (like the screenshot below).
+
   <img width="350" alt="image" src="https://github.com/CaitlynZ/ar-mirror/assets/59945294/dce06080-863a-42e7-bee1-fb07bf2e054a">
 
-
 ## `main` branch
-The version used for midterm presentation, committed with `Packages/com.ptc.vuforia.engine-10.17.4.tgz` removed (exceed the file size limit).
 
+The updated version committed with `Packages/com.ptc.vuforia.engine-10.17.4.tgz` removed (exceed the file size limit).
+
+## process
+
+### randomize hints, only control how many hints shown
+
+- key press on "1", "2", "3" and "4" to toggle the show/hide for each hint cube
+- key press on "Return" to randomly generate next round of hints on all cubes
