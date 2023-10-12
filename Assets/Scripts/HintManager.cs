@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HintManager : MonoBehaviour
 {
-    public Material[] hintMaterials;
+    private Object[] hintMaterials;
     private List<int> hintIdx;
     private GameObject[] cubes;
     private List<int> cubeIdx;
@@ -15,6 +15,7 @@ public class HintManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hintMaterials = Resources.LoadAll("Images/Materials", typeof(Material));
         hintIdx = Enumerable.Range(0, hintMaterials.Length).ToList();
         ShuffleIdx(hintIdx); // pre-shuffle
         cubes = GameObject.FindGameObjectsWithTag("Cube");
@@ -67,7 +68,7 @@ public class HintManager : MonoBehaviour
         // assume we always have enough hints for all the cubes
         for (int i = 0; i < hintsNumberToShow; i++)
         {
-            cubes[cubeIdx[i]].GetComponent<Renderer>().material = hintMaterials[hintIdx[GetHintIdxFromCur(i)]];
+            cubes[cubeIdx[i]].GetComponent<Renderer>().material = (Material)hintMaterials[hintIdx[GetHintIdxFromCur(i)]];
         }
 
         for (int i = 0; i < cubes.Length; i++)
@@ -86,7 +87,7 @@ public class HintManager : MonoBehaviour
         HashSet<string> shapeAndDirectionSet = new HashSet<string>();
         for (int i = 0; i < hintsNumberToShow; i++)
         {
-            // three-letter name, eg XL2 represent the hint with shape X, direction <- and number 2
+            // three-letter name, eg CL2 represent the hint with shape X, direction <- and number 2
             string hintName = hintMaterials[hintIdx[GetHintIdxFromCur(i)]].name;
 
             // test if this shape-and-direction combo exist
@@ -114,7 +115,6 @@ public class HintManager : MonoBehaviour
         while (!IsDoable())
         {
             curHintIdx = GetHintIdxFromCur(1);
-            // TODO do something if test everything
         }
 
         ShuffleIdx(cubeIdx);
@@ -122,5 +122,7 @@ public class HintManager : MonoBehaviour
 
         // move the hints window to the next position
         curHintIdx = GetHintIdxFromCur(hintsNumberToShow);
+
+        // TODO auto shuffle the hint when iterate through all hints
     }
 }
