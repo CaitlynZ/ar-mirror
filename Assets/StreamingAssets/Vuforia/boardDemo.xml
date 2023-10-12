@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="Poster4" size="1.000000 1.414619" />
+    <ImageTarget name="Poster2" size="1.000000 1.414619" />
+    <ImageTarget name="Poster1" size="1.000000 1.414619" />
+    <ImageTarget name="Poster3" size="1.000000 1.414619" />
     <ImageTarget name="tarmac" size="1.000000 0.700000" />
     <ImageTarget name="beads" size="1.000000 1.000000" />
     <ImageTarget name="chips" size="1.000000 0.700000" />
     <ImageTarget name="stones_scaled" size="1.000000 0.699219" />
-    <ImageTarget name="news2" size="0.500000 0.680816" />
-    <ImageTarget name="news1" size="0.500000 0.664211" />
-    <ImageTarget name="poster2" size="1.000000 1.390295" />
-    <ImageTarget name="poster1" size="1.000000 1.360156" />
-    <ImageTarget name="bookshelf" size="1.000000 0.750000" />
   </Tracking>
 </QCARConfig>

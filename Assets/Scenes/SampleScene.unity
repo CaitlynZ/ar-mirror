@@ -206,13 +206,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: beads
+  mTrackableName: Poster4
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/boardDemo.xml
-  mAspectRatio: 1
+  mAspectRatio: 1.414619
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1
+  mHeight: 1.414619
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 306032586}
   mHiddenRoot: {fileID: 0}
-  mTargetName: beads
+  mTargetName: Poster4
   mDatasetName: Vuforia/boardDemo.xml
   mCastedBehaviour: {fileID: 306032586}
   mMeshFilter: {fileID: 0}
@@ -331,13 +331,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: chips
+  mTrackableName: Poster2
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/boardDemo.xml
-  mAspectRatio: 0.7
+  mAspectRatio: 1.414619
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 0.7
+  mHeight: 1.414619
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 545278385}
   mHiddenRoot: {fileID: 0}
-  mTargetName: chips
+  mTargetName: Poster2
   mDatasetName: Vuforia/boardDemo.xml
   mCastedBehaviour: {fileID: 545278385}
   mMeshFilter: {fileID: 0}
@@ -456,13 +456,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: stones_scaled
+  mTrackableName: Poster1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/boardDemo.xml
-  mAspectRatio: 0.699219
+  mAspectRatio: 1.414619
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 0.699219
+  mHeight: 1.414619
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 559909690}
   mHiddenRoot: {fileID: 0}
-  mTargetName: stones_scaled
+  mTargetName: Poster1
   mDatasetName: Vuforia/boardDemo.xml
   mCastedBehaviour: {fileID: 559909690}
   mMeshFilter: {fileID: 0}
@@ -704,6 +704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7628442944941250101, guid: 1b40dafc7863a40258c8e6342464cdec, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2698696c4138649c78974443533e72cd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -817,13 +821,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: tarmac
+  mTrackableName: Poster3
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/boardDemo.xml
-  mAspectRatio: 0.7
+  mAspectRatio: 1.414619
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 0.7
+  mHeight: 1.414619
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -859,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1157267373}
   mHiddenRoot: {fileID: 0}
-  mTargetName: tarmac
+  mTargetName: Poster3
   mDatasetName: Vuforia/boardDemo.xml
   mCastedBehaviour: {fileID: 1157267373}
   mMeshFilter: {fileID: 0}
@@ -1082,14 +1086,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintMaterials:
-  - {fileID: 2100000, guid: 960a63b262ea9489aa5c04b93bea54a6, type: 2}
-  - {fileID: 2100000, guid: 9af211a507a084a579910fe98d8da59b, type: 2}
-  - {fileID: 2100000, guid: a0ec28441090c4ce3b82b1bbb17a0cb8, type: 2}
-  - {fileID: 2100000, guid: dacf845040e134c2aa85bb18c8e6a2c1, type: 2}
-  - {fileID: 2100000, guid: b51c11ed39fe448dd990f308cb4ef045, type: 2}
-  - {fileID: 2100000, guid: e356e0c82bd5d42d1893175970342c7a, type: 2}
-  - {fileID: 2100000, guid: 210398540535b47fb8b47862edc0e22e, type: 2}
-  - {fileID: 2100000, guid: 74033cda1babf49399703c70bbee7136, type: 2}
+  - {fileID: 2100000, guid: a3e3132660c9349ec97f459b62f78f15, type: 2}
+  - {fileID: 2100000, guid: 2698696c4138649c78974443533e72cd, type: 2}
+  - {fileID: 2100000, guid: 1329f36f94188438db1fd49433937e24, type: 2}
+  - {fileID: 2100000, guid: cd0d5745c94414d4890809f170a1bf84, type: 2}
+  - {fileID: 2100000, guid: 0f6d21e8263af414d8c10e35d16b0350, type: 2}
+  - {fileID: 2100000, guid: 47bb614457a4e4b5cbc6e1079f7c878d, type: 2}
+  - {fileID: 2100000, guid: 11c0c5fd09ef248018eceb62f0985daf, type: 2}
+  - {fileID: 2100000, guid: 7c2226347dca047d2b72821a6f47ef0f, type: 2}
 --- !u!4 &1571736390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4417261303822985041, guid: b7535da4e452be848861bba57f0e5ea0, type: 3}
@@ -1195,7 +1199,7 @@ PrefabInstance:
     - target: {fileID: 7628442944941250101, guid: 5b29f569654124b418cb8d91c6777c25, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e356e0c82bd5d42d1893175970342c7a, type: 2}
+      objectReference: {fileID: 2100000, guid: 1329f36f94188438db1fd49433937e24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1278,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 7628442944941250101, guid: b7535da4e452be848861bba57f0e5ea0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24552e2dedc524b4cb89f7f466337e6a, type: 2}
+      objectReference: {fileID: 2100000, guid: a3e3132660c9349ec97f459b62f78f15, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1290,50 +1294,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1571736402}
   m_SourcePrefab: {fileID: 100100000, guid: b7535da4e452be848861bba57f0e5ea0, type: 3}
---- !u!1 &1890685029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1890685031}
-  - component: {fileID: 1890685030}
-  m_Layer: 0
-  m_Name: CubeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1890685030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890685029}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e8cfa2d779987409ebb4bf966a88f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1890685031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890685029}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2032388557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1405,7 +1365,7 @@ PrefabInstance:
     - target: {fileID: 7628442944941250101, guid: 987dcaddb8f29448db0c7688097e4744, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 74033cda1babf49399703c70bbee7136, type: 2}
+      objectReference: {fileID: 2100000, guid: 7c2226347dca047d2b72821a6f47ef0f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1427,5 +1387,4 @@ SceneRoots:
   - {fileID: 545278386}
   - {fileID: 1157267374}
   - {fileID: 306032587}
-  - {fileID: 1890685031}
   - {fileID: 1260370246}

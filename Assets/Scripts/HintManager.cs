@@ -9,18 +9,21 @@ public class HintManager : MonoBehaviour
     private List<int> hintIdx;
     private GameObject[] cubes;
     private List<int> cubeIdx;
+    private int curHintIdx = 0;
+    private int hintsNumberToShow = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         hintIdx = Enumerable.Range(0, hintMaterials.Length).ToList();
+        ShuffleIdx(hintIdx); // pre-shuffle
         cubes = GameObject.FindGameObjectsWithTag("Cube");
         cubeIdx = Enumerable.Range(0, cubes.Length).ToList();
 
-        // hide all cubes when starting
+        // show all cubes when starting 
         foreach (GameObject cube in cubes)
         {
-            cube.SetActive(false);
+            cube.SetActive(true);
         }
     }
 
@@ -31,14 +34,16 @@ public class HintManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2)
         || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
         {
+            System.Int32.TryParse(Input.inputString, out hintsNumberToShow);
+            ShowNewHints();
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            // restart by shuffling hints and starting from the first hint
             ShuffleIdx(hintIdx);
-            AssignHints();
+            curHintIdx = 0;
 
-            int cubeShown = 0;
-            System.Int32.TryParse(Input.inputString, out cubeShown);
-            ShuffleIdx(cubeIdx);
-            DisplayCubes(cubeShown);
-
+            ShowNewHints();
         }
     }
 
@@ -50,7 +55,6 @@ public class HintManager : MonoBehaviour
         while (n > 1)
         {
             n--;
-            Debug.Log(n);
             int k = Random.Range(0, n + 1);
             int temp = list[k];
             list[k] = list[n];
@@ -58,21 +62,65 @@ public class HintManager : MonoBehaviour
         }
     }
 
-    void AssignHints()
+    void AssignAndShowHints()
     {
         // assume we always have enough hints for all the cubes
+        for (int i = 0; i < hintsNumberToShow; i++)
+        {
+            cubes[cubeIdx[i]].GetComponent<Renderer>().material = hintMaterials[hintIdx[GetHintIdxFromCur(i)]];
+        }
+
         for (int i = 0; i < cubes.Length; i++)
         {
-            cubes[i].GetComponent<Renderer>().material = hintMaterials[hintIdx[i]];
+            cubes[cubeIdx[i]].SetActive(!!(i < hintsNumberToShow));
         }
     }
 
-    void DisplayCubes(int cubeShown)
+    // rules:
+    // 1. no hints with shape-and-direction combo
+    // 2. total number of buttons <= 10
+    bool IsDoable()
     {
-        for (int i = 0; i < cubes.Length; i++)
+        // total number of buttons need to press
+        int total = 0;
+        HashSet<string> shapeAndDirectionSet = new HashSet<string>();
+        for (int i = 0; i < hintsNumberToShow; i++)
         {
-            cubes[cubeIdx[i]].SetActive(!!(i < cubeShown));
+            // three-letter name, eg XL2 represent the hint with shape X, direction <- and number 2
+            string hintName = hintMaterials[hintIdx[GetHintIdxFromCur(i)]].name;
+
+            // test if this shape-and-direction combo exist
+            if (!shapeAndDirectionSet.Add(hintName.Substring(0, 2)))
+            {
+                return false;
+            }
+
+            // add up the total number
+            int num = 0;
+            System.Int32.TryParse(hintName.Substring(2), out num);
+            total += num;
         }
+
+        return total <= 10;
     }
 
+    int GetHintIdxFromCur(int distance)
+    {
+        return (curHintIdx + distance) % hintIdx.Count;
+    }
+
+    void ShowNewHints()
+    {
+        while (!IsDoable())
+        {
+            curHintIdx = GetHintIdxFromCur(1);
+            // TODO do something if test everything
+        }
+
+        ShuffleIdx(cubeIdx);
+        AssignAndShowHints();
+
+        // move the hints window to the next position
+        curHintIdx = GetHintIdxFromCur(hintsNumberToShow);
+    }
 }
