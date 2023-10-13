@@ -20,7 +20,7 @@ public class HintManager : MonoBehaviour
         // hide all cubes when starting
         foreach (GameObject cube in cubes)
         {
-            cube.SetActive(false);
+            cube.SetActive(true);
         }
     }
 
