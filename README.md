@@ -18,6 +18,21 @@ The updated version committed with `Packages/com.ptc.vuforia.engine-10.17.4.tgz`
 
 ### randomize hints, only control how many hints shown
 
-- key press on "0", "1", "2", "3" and "4" to control how many hints are shown while triggering shuffle
-  - the position where hints are shown is randomized
-  - current randomize logic: shuffle the list and take as many as needed (from beginning of the list) to display
+- key press on "0", "1", "2", "3" and "4"
+  - make the red error image invisible
+  - show the time with 30 seconds
+  - show hints and control how many hints are shown while triggering shuffle
+    - the position where hints are shown is randomized
+    - current randomize logic: shuffle the list and take as many as needed (from beginning of the list) to display
+
+- key press on "5"
+  - make the red error image invisible
+  - show the time with 30 seconds
+
+- key press on "space"
+  - pause or re-start the timer
+  - DONT press "0", "1", "2", "3", "4" and "5" in the pause mode!
+
+- key press on "0"
+  - make hints and timer invisible
+  - make the red error image visible
