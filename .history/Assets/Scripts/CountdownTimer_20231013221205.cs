@@ -28,7 +28,7 @@ public class CountdownTimer : MonoBehaviour
             UpdateCountdownText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Alpha6)) {
             if (isPaused)
             {
                 isPaused = false;
@@ -45,7 +45,7 @@ public class CountdownTimer : MonoBehaviour
         }
         else if (!isPaused) {
             countdownTime -= Time.deltaTime;
-            // audioSource.PlayOneShot(tickSound);
+            audioSource.PlayOneShot(tickSound);
             UpdateCountdownText();
         }        
     }

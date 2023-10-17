@@ -28,7 +28,7 @@ public class CountdownTimer : MonoBehaviour
             UpdateCountdownText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Alpha6)) {
             if (isPaused)
             {
                 isPaused = false;

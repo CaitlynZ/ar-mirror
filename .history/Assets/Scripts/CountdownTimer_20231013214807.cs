@@ -9,7 +9,7 @@ public class CountdownTimer : MonoBehaviour
     public float initialCountdownTime = 31.0f;
     public TextMeshProUGUI textMeshPro;
     public Image fillImage;
-    public AudioClip tickSound;
+    public AudioClip countdownSound;
     public AudioSource audioSource;
     private float countdownTime;
     private bool isPaused = false;
@@ -28,7 +28,7 @@ public class CountdownTimer : MonoBehaviour
             UpdateCountdownText();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Alpha6)) {
             if (isPaused)
             {
                 isPaused = false;
@@ -45,7 +45,8 @@ public class CountdownTimer : MonoBehaviour
         }
         else if (!isPaused) {
             countdownTime -= Time.deltaTime;
-            // audioSource.PlayOneShot(tickSound);
+            audioSource.clip = countdownSound;
+            audioSource.Play();
             UpdateCountdownText();
         }        
     }
