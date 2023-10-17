@@ -26,9 +26,7 @@ public class CountdownTimer : MonoBehaviour
     {   
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5)){
             countdownTime = initialCountdownTime;
-            textMeshPro.gameObject.SetActive(true);
-            fillImage.gameObject.SetActive(true);
-            backImage.gameObject.SetActive(true);
+            ShowCountdown();
             UpdateCountdown();
         }
 
@@ -64,5 +62,12 @@ public class CountdownTimer : MonoBehaviour
         textMeshPro.gameObject.SetActive(false);
         fillImage.gameObject.SetActive(false);
         backImage.gameObject.SetActive(false);
+    }
+
+    private void ShowCountdown()
+    {
+        textMeshPro.gameObject.SetActive(true);
+        fillImage.gameObject.SetActive(true);
+        backImage.gameObject.SetActive(true);
     }
 }
