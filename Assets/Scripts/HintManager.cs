@@ -105,9 +105,14 @@ public class HintManager : MonoBehaviour
         return total <= 10;
     }
 
-    int GetHintIdxFromCur(int distance)
+    int GetHintIdxFromCur(int distance, bool isWindowMoved = false)
     {
-        return (curHintIdx + distance) % hintIdx.Count;
+        int nextHintIdx = (curHintIdx + distance) % hintIdx.Count;
+        if (isWindowMoved && nextHintIdx < curHintIdx)
+        {
+            ShuffleIdx(hintIdx);
+        }
+        return nextHintIdx;
     }
 
     void ShowNewHints()
@@ -121,8 +126,6 @@ public class HintManager : MonoBehaviour
         AssignAndShowHints();
 
         // move the hints window to the next position
-        curHintIdx = GetHintIdxFromCur(hintsNumberToShow);
-
-        // TODO auto shuffle the hint when iterate through all hints
+        curHintIdx = GetHintIdxFromCur(hintsNumberToShow, true);
     }
 }
