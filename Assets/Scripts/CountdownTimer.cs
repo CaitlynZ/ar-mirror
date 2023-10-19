@@ -13,19 +13,27 @@ public class CountdownTimer : MonoBehaviour
     // public AudioClip tickSound;
     // public AudioSource audioSource;
     private float countdownTime;
-    private bool isPaused = false;
+    private bool isPaused = true;
 
     private void Start()
     {
         // textMeshPro = GetComponent<TextMeshProUGUI>();
-        countdownTime = initialCountdownTime;
+        countdownTime = initialCountdownTime - 1;
         UpdateCountdown();
     }
 
    private void Update()
     {   
         if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Alpha5)){
+            isPaused = false;
             countdownTime = initialCountdownTime;
+            ShowCountdown();
+            UpdateCountdown();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            isPaused = true;
+            countdownTime = initialCountdownTime - 1;
             ShowCountdown();
             UpdateCountdown();
         }
@@ -34,7 +42,7 @@ public class CountdownTimer : MonoBehaviour
             isPaused = !isPaused;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0)) {
+        if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.S)) {
             HideCountdown();
         }
 
