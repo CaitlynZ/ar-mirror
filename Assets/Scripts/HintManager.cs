@@ -17,7 +17,12 @@ public class HintManager : MonoBehaviour
     {
         hintMaterials = Resources.LoadAll("Images/Materials", typeof(Material));
         hintIdx = Enumerable.Range(0, hintMaterials.Length).ToList();
-        ShuffleIdx(hintIdx); // pre-shuffle
+        // pre-shuffle
+        ShuffleIdx(hintIdx); 
+        while (hintMaterials[hintIdx[0]].name.Contains("D"))
+        {
+            ShuffleIdx(hintIdx);
+        }
         cubes = GameObject.FindGameObjectsWithTag("Cube");
         cubeIdx = Enumerable.Range(0, cubes.Length).ToList();
 
@@ -32,16 +37,27 @@ public class HintManager : MonoBehaviour
     void Update()
     {
         // number key control how many hints to display while triggering shuffle on hints and positions
-        if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2)
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2)
         || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha4))
         {
             System.Int32.TryParse(Input.inputString, out hintsNumberToShow);
             ShowNewHints();
         }
+        else if (Input.GetKeyDown(KeyCode.Alpha0) || Input.GetKeyDown(KeyCode.S)) 
+        {
+            foreach (GameObject cube in cubes)
+            {
+                cube.SetActive(false);
+            }
+        }
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             // restart by shuffling hints and starting from the first hint
             ShuffleIdx(hintIdx);
+            while (hintMaterials[hintIdx[0]].name.Contains("D"))
+            {
+                ShuffleIdx(hintIdx);
+            }
             curHintIdx = 0;
 
             ShowNewHints();
